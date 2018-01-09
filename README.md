@@ -1,4 +1,4 @@
-# react-pracel
+# React-Pracel
 
 react-pracel-demo is  a demo for react with parcel bundle.
 
