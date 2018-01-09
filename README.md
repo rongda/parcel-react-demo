@@ -33,6 +33,7 @@ You'll see something like this:
 │   │   ├── index.css[styl][scss]                          // 样式入口文件
 │   ├── index.html                                         // 项目入口文件      
 ├── .babelrc                                               // babel配置
+├── cssnano.config.js                                      // cssnano配置
 ├── .gitignore                                             // gitignore 
 ├── package.json                                           // 依赖文件
 └── README.md                                              // 你懂的
