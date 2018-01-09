@@ -4,9 +4,17 @@ react-pracel-demo is  a demo for react with parcel bundle.
 
 ## Table of contents
 
+* [How to user](#how-to-user)
 * [What's included](#what-is-included)
 * [Notice](#notice)
 * [Other](#other)
+
+### How to user
+* 安装node环境，你懂的.
+* yarn install.
+* yarn run dev.
+* yarn run build.
+* 当然，你也可以用npm.
 
 ### What's included
 
@@ -34,8 +42,9 @@ You'll see something like this:
 ## Notice
 
 *  Parcel支持sass、less、stylus等css预编译，会自动安装到devDependencies中. 
-*  [parcel官网]#https://parceljs.org/ 
-*  [Github]#https://github.com/parcel-bundler/parcel 
+*  build之前请删除dist&.cache目录，当然你可以参考parcel禁止cache. 
+*  [Parcel] https://parceljs.org/ 
+*  [Github] https://github.com/parcel-bundler/parcel 
 
 ## Other
 Thank you for your support and guidance.
