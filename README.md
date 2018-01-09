@@ -41,10 +41,10 @@ You'll see something like this:
 
 ## Notice
 
-*  Parcel支持sass、less、stylus等css预编译，会自动安装到devDependencies中. 
-*  build之前请删除dist&.cache目录，当然你可以参考parcel禁止cache. 
-*  [Parcel] https://parceljs.org/ 
-*  [Github] https://github.com/parcel-bundler/parcel 
+*  Parcel支持[Sass][Less][Stylus]等css预编译，构建时会自动添加到devDependencies. 
+*  build之前请删除dist&.cache目录，当然你可以参考[Parcel]((https://parceljs.org/))禁止cache. 
+*  [Parcel] (https://parceljs.org/) 
+*  [Github] (https://github.com/parcel-bundler/parcel) 
 
 ## Other
 Thank you for your support and guidance.
