@@ -27,8 +27,11 @@ You'll see something like this:
 │   ├── assets/                                            // 静态资源位置、可自行规划目录
 │   │   ├── .gitkeep
 │   ├── script/                                            // 脚本目录、可自行规划目录(component等)
-│   │   ├── index.js                                       // 脚本入口文件               
-│   │   ├── App.js                                         // React 组件入口文件            
+│   │   ├── api/                                           // api文件
+│   │   │   ├── .gitkeep                                                 
+│   │   ├── component/                                     // 组件component文件、可自行规划目录
+│   │   │   ├── App.js                                     // React 组件入口文件    
+│   │   ├── index.js                                       // 脚本入口文件
 │   ├── style/                                             // 样式目录、可自行规划目录(lib、page等)
 │   │   ├── index.css[styl][scss]                          // 样式入口文件
 │   ├── index.html                                         // 项目入口文件      
