@@ -8,6 +8,7 @@ react-pracel-demo is  a demo for react with parcel bundle.
 * [What's included](#what-is-included)
 * [Notice](#notice)
 * [Other](#other)
+* [parce-react-antd-axios](https://github.com/rongda/react-parcel-demo/tree/parce-react-antd-axios)
 
 ### How to user
 * 安装node环境，你懂的.
