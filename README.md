@@ -46,6 +46,7 @@ You'll see something like this:
 ## Notice
 
 *  Parcel支持[Sass][Less][Stylus]等css预编译语言，构建时会自动添加到devDependencies. 
+*  Parcel HMR 适用于[JavaScript][CSS]，样式请在脚本入口文件引入.
 *  Build之前请删除[dist]&[.cache]目录，当然你可以参考[Parcel-Bundler](https://parceljs.org/)禁止[cache]. 
 *  [Parcel-Bundler](https://parceljs.org/) .
 *  [Github](https://github.com/parcel-bundler/parcel) .
