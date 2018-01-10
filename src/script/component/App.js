@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Button } from 'antd-mobile';
 
 class App extends Component {
 	constructor() {
@@ -8,7 +9,12 @@ class App extends Component {
 
 	// methods
 	render() {
-		return (<p>Hello Parcel React</p>);
+		return (
+			<div>
+				<p>Hello Parcel React</p>
+				<Button type="primary">BUTTON</Button>
+			</div>
+		);
 	}
 }
 
