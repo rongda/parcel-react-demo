@@ -4,7 +4,6 @@
 	<title>react parcel demo</title>
 	<!-- set `maximum-scale` for some compatibility issues -->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
-  <link rel="stylesheet" type="text/css" href="./style/index.styl">
   <script src="https://as.alipayobjects.com/g/component/fastclick/1.0.6/fastclick.js"></script>
   <script>
     if ('addEventListener' in document) {
@@ -16,6 +15,8 @@
       document.writeln('<script src="https://as.alipayobjects.com/g/component/es6-promise/3.2.2/es6-promise.min.js"'+'>'+'<'+'/'+'script>');
     }
   </script>
+  <!-- <link rel="stylesheet" type="text/css" href="./style/index.styl"> -->
+  <!-- 样式入口文件在index.js加载，适用于热更新 -->
 </head>
 <body>
 	<noscript>
