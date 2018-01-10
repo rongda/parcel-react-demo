@@ -22,6 +22,8 @@
     "parcel-bundler": "^1.4.1"
   },
   "dependencies": {
+    "antd-mobile": "^2.1.3",
+    "axios": "^0.17.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0"
   }
