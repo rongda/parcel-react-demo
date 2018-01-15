@@ -1,55 +1,5 @@
-# React-Pracel
+# typescript-pracel-demo
 
-react-pracel-demo is  a demo for react with parcel bundle.
+typescript-pracel-demo is  a demo for ts with parcel bundle.
 
-## Table of contents
-
-* [How to user](#how-to-user)
-* [What's included](#what-is-included)
-* [Notice](#notice)
-* [Other](#other)
-
-### How to user
-* 安装node环境，你懂的.
-* yarn install.
-* yarn run dev.
-* yarn run build.
-* 当然，你也可以用npm.
-
-### What's included
-
-Within the download you'll find the following directories and files.
-You'll see something like this:
-
-```
-/
-├── src/
-│   ├── assets/                                            // 静态资源位置、可自行规划目录
-│   │   ├── .gitkeep
-│   ├── script/                                            // 脚本目录、可自行规划目录(component等)
-│   │   ├── api/                                           // api文件
-│   │   │   ├── .gitkeep                                                 
-│   │   ├── component/                                     // 组件component文件、可自行规划目录
-│   │   │   ├── App.js                                     // React 组件入口文件    
-│   │   ├── index.js                                       // 脚本入口文件
-│   ├── style/                                             // 样式目录、可自行规划目录(lib、page等)
-│   │   ├── index.css[styl][scss]                          // 样式入口文件
-│   ├── index.html                                         // 项目入口文件      
-├── .babelrc                                               // babel配置
-├── cssnano.config.js                                      // cssnano配置
-├── .gitignore                                             // gitignore 
-├── package.json                                           // 依赖文件
-└── README.md                                              // 你懂的
-
-```
-
-## Notice
-
-*  Parcel支持[Sass][Less][Stylus]等css预编译语言，构建时会自动添加到devDependencies. 
-*  Parcel HMR 适用于[JavaScript][CSS]，样式请在脚本入口文件引入.
-*  Build之前请删除[dist]&[.cache]目录，当然你可以参考[Parcel-Bundler](https://parceljs.org/)禁止[cache]. 
-*  [Parcel-Bundler](https://parceljs.org/) .
-*  [Github](https://github.com/parcel-bundler/parcel) .
-
-## Other
-Thank you for your support and guidance.
+# TypeScript 是 JavaScript 类型的超集，它可以编译成普通的 JavaScript，同时也支持现代 ES2015+ 的特性。转换 TypeScript 无需任何额外配置，开箱即用。

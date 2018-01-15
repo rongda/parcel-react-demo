@@ -1,20 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>react parcel demo</title>
-	<!-- set `maximum-scale` for some compatibility issues -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
-  <script src="https://as.alipayobjects.com/g/component/fastclick/1.0.6/fastclick.js"></script>
-  <script>
-    if ('addEventListener' in document) {
-      document.addEventListener('DOMContentLoaded', function() {
-        FastClick.attach(document.body);
-      }, false);
-    }
-    if(!window.Promise) {
-      document.writeln('<script src="https://as.alipayobjects.com/g/component/es6-promise/3.2.2/es6-promise.min.js"'+'>'+'<'+'/'+'script>');
-    }
-  </script>
+	<title>TypeScript Parcel Demo</title>
   <!-- <link rel="stylesheet" type="text/css" href="./style/index.styl"> -->
   <!-- 样式入口文件在index.js加载，适用于热更新 -->
 </head>
@@ -22,7 +9,6 @@
 	<noscript>
     You need to enable JavaScript to run this app.
   </noscript>
-  <div id="root"></div>
-	<script src="./script/index.js"></script>
+	<script src="./script/index.ts"></script>
 </body>
 </html>
