@@ -1,14 +1,13 @@
 import React from 'react';
-import Alin from '../containers/Alin';
-import Roda from '../containers/Roda';
-
+import Home from './Home';
+import About from './About';
 import {
   BrowserRouter as Router,
   Route,
   Link
 } from 'react-router-dom';
 
-class App extends React.Component {
+class RouterSource extends React.Component {
 	render() {
 		return (
 			<Router>
@@ -18,14 +17,12 @@ class App extends React.Component {
 		        <li><Link to="/about">About</Link></li>
 		      </ul>
 		      <hr/>
-		      <Route exact path="/" component={Roda}/>
-		      <Route path="/about" component={Alin}/>
-		      <Alin />
-		      <Roda />
+		      <Route exact path="/" component={Home}/>
+		      <Route path="/about" component={About}/>
 				</div>
 			</Router>
 		);
 	}
 }
 
-export default App
+export default RouterSource

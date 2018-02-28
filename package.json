@@ -20,12 +20,17 @@
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "cross-env": "^5.1.3",
-    "parcel-bundler": "^1.4.1"
+    "parcel-bundler": "^1.4.1",
+    "stylus": "^0.54.5"
   },
   "dependencies": {
     "antd-mobile": "^2.1.3",
     "axios": "^0.17.1",
+    "prop-types": "^15.6.0",
     "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "react-dom": "^16.2.0",
+    "react-redux": "^5.0.6",
+    "react-router-dom": "^4.2.2",
+    "redux": "^3.7.2"
   }
 }
