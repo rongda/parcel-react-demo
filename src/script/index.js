@@ -1,21 +1,11 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { createStore } from 'redux';
-import { Provider } from 'react-redux';
-import App from './component/App';
-import reducer from './reducers';
+import add from "./add.js";
 import "../style/index.styl";
 
-const store = createStore(reducer);
-
-ReactDOM.render(
-	<Provider store={store}>
-		<App />
-	</Provider>,
-	document.getElementById('root')
-);
-
-// Hot Module Replacement
-if (module.hot) {
-  module.hot.accept();
-}
+let num = add(9, 10);
+console.log(num);
+$.ajax({
+	url: "/api/test",
+	success: function(response) {
+		console.log(response);
+	}
+});
