@@ -23,12 +23,17 @@ You'll see something like this:
 
 ```
 /
+├── api/
+│   ├── index.js                                           // 接口入口文件
+├── build/
+│   ├── dev-server.js                                      // 开发环境
+│   ├── prod-server.js                                     // 产品环境
+├── config/
+│   ├── index.js                                           // 配置文件
 ├── src/
 │   ├── assets/                                            // 静态资源位置、可自行规划目录
 │   │   ├── .gitkeep
-│   ├── script/                                            // 脚本目录、可自行规划目录(component等)
-│   │   ├── api/                                           // api文件
-│   │   │   ├── .gitkeep                                                 
+│   ├── script/                                            // 脚本目录、可自行规划目录(component等)                                                 
 │   │   ├── component/                                     // 组件component文件、可自行规划目录
 │   │   │   ├── App.js                                     // React 组件入口文件    
 │   │   ├── index.js                                       // 脚本入口文件
