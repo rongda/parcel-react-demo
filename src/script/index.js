@@ -1,11 +1,8 @@
-import add from "./add.js";
-import "../style/index.styl";
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./component/App.js";
 
-let num = add(9, 10);
-console.log(num);
-$.ajax({
-	url: "/api/test",
-	success: function(response) {
-		console.log(response);
-	}
-});
+ReactDOM.render(
+	<App />,
+	document.getElementById('root')
+);
