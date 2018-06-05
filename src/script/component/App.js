@@ -1,5 +1,7 @@
-import React from "react";
-import axios from "axios";
+import React from "react"
+import axios from "axios"
+import ShowNameList from '../containers/ShowNameList.js'
+import ShowUniversityList from '../containers/ShowUniversityList.js'
 
 class App extends React.Component {
 	componentWillMount() {
@@ -11,9 +13,13 @@ class App extends React.Component {
 	}
 	render() {
 		return (
-			<div>Hello React @2018</div>
+			<div>
+				<ShowNameList />
+				<ShowUniversityList />
+				<div>Hello React @2018</div>
+			</div>
 		);
 	}
 }
 
-export default App;
+export default App
