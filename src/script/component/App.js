@@ -14,9 +14,10 @@ class App extends React.Component {
 	render() {
 		return (
 			<div>
+				<header>Hello React</header>
 				<ShowNameList />
 				<ShowUniversityList />
-				<div>Hello React @2018</div>
+				<footer>@2018</footer>
 			</div>
 		);
 	}
