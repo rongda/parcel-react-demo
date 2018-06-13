@@ -22,6 +22,11 @@ class App extends React.Component {
 		return (
 			<Router>
 				<div>
+					<ul>
+						<li><Link to="/">Home</Link></li>
+						<li><Link to="/about">About</Link></li>
+						<li><Link to="/process">Process</Link></li>
+					</ul>
 					{
 						routes.map((route, index) => (
 							<Route key={index} exact path={route.path} component={route.component}/>
