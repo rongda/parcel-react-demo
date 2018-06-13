@@ -1,24 +1,34 @@
 import React from "react"
 import axios from "axios"
-import ShowNameList from '../containers/ShowNameList.js'
-import ShowUniversityList from '../containers/ShowUniversityList.js'
+import {
+	BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom'
+
+import {
+	routes
+} from './../router'
 
 class App extends React.Component {
 	componentWillMount() {
 		axios
 		.get('/api/test')
 		.then((response) => {
-			console.log(response.data);
+			console.log('axios', response.data);
 		});
 	}
 	render() {
 		return (
-			<div>
-				<header>Hello React</header>
-				<ShowNameList />
-				<ShowUniversityList />
-				<footer>@2018</footer>
-			</div>
+			<Router>
+				<div>
+					{
+						routes.map((route, index) => (
+							<Route key={index} exact path={route.path} component={route.component}/>
+						))
+					}
+				</div>
+			</Router>
 		);
 	}
 }
