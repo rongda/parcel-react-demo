@@ -1,19 +1,30 @@
-import Home from './../component/Home'
-import About from './../component/About'
-import Process from './../component/Process'
+import React from 'react';
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 
-const routes = [
-  {
-    path: '/',
-    component: Home
-  },
-  {
-    path: '/about',
-    component: About
-  },
-  {
-    path: '/process',
-    component: Process
-  },
-]
-export { routes }
+import App from '../component/App';
+import Age from '../component/Age';
+import Name from '../component/Name';
+import Hello from '../component/Hello';
+import Auth from '../component/Auth';
+
+class RouterConfig extends React.Component{
+  render() {
+    return (
+      <BrowserRouter>
+        <div>
+          <App />
+          <Switch>
+            <Route path='/' exact component={Hello}></Route>
+            <Route path='/age' component={Age}></Route>
+            <Route path='/name' component={Name}></Route>
+            <Route path='/auth' component={Auth}></Route>
+            <Route path='/:location' component={Hello}></Route>
+            <Redirect to='/'></Redirect>
+          </Switch>
+        </div>
+      </BrowserRouter>
+    )
+  }
+}
+
+export default RouterConfig;

@@ -1,41 +1,33 @@
-import React from "react"
-import axios from "axios"
-import {
-	BrowserRouter as Router,
-  Route,
-  Link
-} from 'react-router-dom'
+import React from 'react';
+import { Link, Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { logout } from '../store/actions';
 
-import {
-	routes
-} from './../router'
+@connect(
+  state => ({
+    token: state.token
+  }),
+  dispatch => ({
+    logout: () => dispatch(logout())
+  })
+)
 
-class App extends React.Component {
-	componentWillMount() {
-		axios
-		.get('/api/test')
-		.then((response) => {
-			console.log('axios', response.data);
-		});
-	}
-	render() {
-		return (
-			<Router>
-				<div>
-					<ul>
-						<li><Link to="/">Home</Link></li>
-						<li><Link to="/about">About</Link></li>
-						<li><Link to="/process">Process</Link></li>
-					</ul>
-					{
-						routes.map((route, index) => (
-							<Route key={index} exact path={route.path} component={route.component}/>
-						))
-					}
-				</div>
-			</Router>
-		);
-	}
+class App extends React.Component{
+  render() {
+    console.log(this.props)
+    const { token, logout } = this.props;
+    const authComponnet = <Redirect to='/auth'></Redirect>
+    const basicComponent = (
+      <div>
+        <button onClick={logout}>退出</button>
+        <hr/>
+        <Link to='/'>Home</Link>
+        <Link to='/age'>年纪</Link>
+        <Link to='/name'>姓名</Link>
+      </div>
+    )
+    const currentComponent = token.isAuth ? basicComponent : authComponnet
+    return currentComponent;
+  }
 }
-
-export default App
+export default App;
