@@ -28,6 +28,10 @@ const asyncReName = (name) => {
           const res = await axios.get('https://easy-mock.com/mock/5b2b75349bd86a040ba4cb15/test/get_name');
           console.log(res.data.name)
           dispatch(reName(res.data.name))
+
+          const test = await axios.get('/api/test');
+          console.log(test.data)
+          
         }
         catch(error) {
           console.log('error', error);
