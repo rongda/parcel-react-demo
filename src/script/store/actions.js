@@ -31,7 +31,9 @@ const asyncReName = (name) => {
 
           const test = await axios.get('/api/test');
           console.log(test.data)
-          
+
+          const user = await axios.get('/api/user');
+          console.log(user.data)
         }
         catch(error) {
           console.log('error', error);
