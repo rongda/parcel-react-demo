@@ -1,6 +1,6 @@
 # React-Pracel
 
-react-pracel-demo is  a demo for react with parcel bundle.
+react-pracel-demo is a framework for React & React-redux & React-router with parcel bundle.
 
 ## Table of contents
 
@@ -10,11 +10,12 @@ react-pracel-demo is  a demo for react with parcel bundle.
 * [Other](#other)
 
 ### How to user
-* 安装node环境，你懂的.
+* install node environment.
+* install MongoDB environment.
 * yarn install.
 * yarn run dev.
 * yarn run build.
-* 当然，你也可以用npm.
+* or use npm.
 
 ### What's included
 
@@ -24,7 +25,7 @@ You'll see something like this:
 ```
 /
 ├── api/
-│   ├── index.js                                           // 接口入口文件
+│   ├── index.js                                           // 接口入口文件(MongoDB, Mock)
 ├── build/
 │   ├── dev-server.js                                      // 开发环境
 │   ├── prod-server.js                                     // 产品环境
@@ -33,9 +34,15 @@ You'll see something like this:
 ├── src/
 │   ├── assets/                                            // 静态资源位置、可自行规划目录
 │   │   ├── .gitkeep
-│   ├── script/                                            // 脚本目录、可自行规划目录(component等)                                                 
+│   ├── script/                                            // 脚本目录、可自行规划目录(component等)
 │   │   ├── component/                                     // 组件component文件、可自行规划目录
-│   │   │   ├── App.js                                     // React 组件入口文件    
+│   │   │   ├── App.js                                     // React 组件入口文件
+│   │   ├── router/                                        // 路由配置文件
+│   │   │   ├── index.js
+│   │   ├── store/                                         // Redux状态
+│   │   │   ├── actions.js                                 // action
+│   │   │   ├── reducer.js                                 // reducer
+│   │   │   ├── type.js                                    // type
 │   │   ├── index.js                                       // 脚本入口文件
 │   ├── style/                                             // 样式目录、可自行规划目录(lib、page等)
 │   │   ├── index.css[styl][scss]                          // 样式入口文件
@@ -53,8 +60,7 @@ You'll see something like this:
 *  Parcel支持[Sass][Less][Stylus]等css预编译语言，构建时会自动添加到devDependencies. 
 *  Parcel HMR 适用于[JavaScript][CSS]，样式请在脚本入口文件引入.
 *  Build之前请删除[dist]&[.cache]目录，当然你可以参考[Parcel-Bundler](https://parceljs.org/)禁止[cache]. 
-*  [Parcel-Bundler](https://parceljs.org/) .
-*  [Github](https://github.com/parcel-bundler/parcel) .
+*  你可以参考 [Parcel-Bundler](https://parceljs.org/) 或 [Github](https://github.com/parcel-bundler/parcel) .
 
 ## Other
 Thank you for your support and guidance.
