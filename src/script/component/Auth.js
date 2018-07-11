@@ -1,6 +1,6 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+import React from 'react'
+import { connect } from 'react-redux'
+import { Redirect } from 'react-router-dom'
 import { login } from '../store/actions'
 
 @connect(
@@ -11,21 +11,20 @@ import { login } from '../store/actions'
     login: () => dispatch(login())
   })
 )
-class Auth extends React.Component{
+class Auth extends React.Component {
   render() {
-    const { login, token } = this.props;
+    const { login, token } = this.props
     return (
       <div>
-        {
-          token.isAuth ? <Redirect to='/'></Redirect> :
+        {token.isAuth ? <Redirect to='/' /> : (
           <div>
             <h1>您还没有权限哦</h1>
             <button onClick={login}>请登录</button>
           </div>
-        }
+        )}
       </div>
     )
   }
 }
 
-export default Auth;
+export default Auth

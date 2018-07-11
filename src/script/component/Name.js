@@ -1,6 +1,6 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import { reName, asyncReName } from '../store/actions';
+import React from 'react'
+import { connect } from 'react-redux'
+import { reName, asyncReName } from '../store/actions'
 
 // 有了@修饰符 根本不需要容器组件
 @connect(
@@ -13,13 +13,13 @@ import { reName, asyncReName } from '../store/actions';
   })
 )
 
-class Name extends React.Component{
+class Name extends React.Component {
   render() {
     const {
       name,
       reName,
       asyncReName
-    } = this.props;
+    } = this.props
     return (
       <div>
         <p>我的名字：{name}</p>
@@ -30,4 +30,4 @@ class Name extends React.Component{
   }
 }
 
-export default Name;
+export default Name

@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import  { addAge, reduceAge } from '../store/actions';
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { addAge, reduceAge } from '../store/actions'
 
 @connect(
   state => ({
@@ -25,8 +25,8 @@ class Age extends Component {
         <button onClick={addAge}>增加一岁</button>
         <button onClick={reduceAge}>减少一岁</button>
       </div>
-    );
+    )
   }
 }
 
-export default Age;
+export default Age
