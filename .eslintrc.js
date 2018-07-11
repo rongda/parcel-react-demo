@@ -1,3 +1,5 @@
+// http://eslint.org/docs/user-guide/configuring
+
 module.exports = {
   "root": true,
   "parser": "babel-eslint",
@@ -14,8 +16,8 @@ module.exports = {
     "commonjs": true
   },
   "extends": [
-    "standard",
-    "standard-react"
+    "standard",      // https://github.com/feross/standard/blob/master/RULES.md#javascript-standard-style
+    "standard-react" // https://github.com/feross/eslint-config-standard-react
   ],
   "plugins": [
     "babel",
@@ -35,10 +37,8 @@ module.exports = {
     // "no-extra-semi": ["error"],
     "space-before-function-paren": ["error", "never"],
     "arrow-parens": 0,
-    // allow async-await
-    "generator-star-spacing": 0,
-    // allow debugger during development
-    "no-debugger": process.env.NODE_ENV === "production" ? 2 : 0,
+    "generator-star-spacing": 0,  // allow async-await
+    "no-debugger": process.env.NODE_ENV === "production" ? 2 : 0, // allow debugger during development
     "react/jsx-indent": ["error", 2],
     "react/jsx-indent-props": ["error", 2],
     "react/prop-types": [0],
