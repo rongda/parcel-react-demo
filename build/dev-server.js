@@ -1,3 +1,4 @@
+/* eslint-disable */
 const Bundler = require('parcel-bundler');
 const Api = require('../api');
 const Path = require('path');
