@@ -25,9 +25,35 @@ const User = mongoose.model('user', new mongoose.Schema({
 	}
 }))
 
-// User.create({
-// 	name: "Roda",
-// 	age: 16
+const Card = mongoose.model('card', new mongoose.Schema({
+	title: {
+		type: String,
+		required: true
+	},
+	title_extra: {
+		type: String,
+		required: true
+	},
+	content: {
+		type: String,
+		required: true
+	},
+	footer: {
+		type: String,
+		required: true
+	},
+	footer_extra: {
+		type: String,
+		required: true
+	}
+}))
+
+// Card.create({
+// 	title: "This is title",
+// 	title_extra: "this is title extra",
+// 	content: "this is content",
+// 	footer: "this is footer",
+// 	footer_extra: "this is footer extra"
 // }, (err, doc) => {
 // 	if(!err) {
 // 		console.log(doc)
@@ -45,6 +71,13 @@ app.get('/api/test', (req, res) => {
 app.get('/api/user', (req, res) => {
 	User.find({}, (err, doc) => {
 		if(!err){
+			res.json(doc)
+		}
+	})
+})
+app.get('/api/card', (req, res) => {
+	Card.find({}, (err, doc) => {
+		if(!err) {
 			res.json(doc)
 		}
 	})
