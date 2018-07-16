@@ -4,8 +4,21 @@ import {
   REDECE_AGE,
   RENAME,
   LOGIN,
-  LOGOUT
+  LOGOUT,
+  REQUEST,
+  RECEIVE
 } from './type'
+
+const loading = (state = false, action) => {
+  switch (action.type) {
+    case REQUEST:
+      return true
+    case RECEIVE:
+      return false
+    default:
+      return state
+  }
+}
 
 const age = (state = 18, action) => {
   switch (action.type) {
@@ -49,7 +62,8 @@ const token = (state = {
 const reducer = combineReducers({
   age,
   name,
-  token
+  token,
+  loading
 })
 
 export default reducer

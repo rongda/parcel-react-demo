@@ -3,11 +3,15 @@ const REDECE_AGE = 'EDECE_AGE'
 const RENAME = 'RENAME'
 const LOGIN = 'LOGIN'
 const LOGOUT = 'LOGOUT'
+const REQUEST = 'REQUEST'
+const RECEIVE = 'RECEIVE'
 
 export {
   ADD_AGE,
   REDECE_AGE,
   RENAME,
   LOGIN,
-  LOGOUT
+  LOGOUT,
+  REQUEST,
+  RECEIVE
 }
