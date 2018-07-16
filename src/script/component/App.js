@@ -3,6 +3,8 @@ import { Link, Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { logout } from '../store/actions'
 
+import { Button, WhiteSpace, WingBlank } from 'antd-mobile'
+
 @connect(
   state => ({
     token: state.token
@@ -24,6 +26,8 @@ class App extends React.Component {
         <Link to='/'>Home</Link>
         <Link to='/age'>年纪</Link>
         <Link to='/name'>姓名</Link>
+
+        <WingBlank><Button>default</Button><WhiteSpace /></WingBlank>
       </div>
     )
     const currentComponent = token.isAuth ? basicComponent : authComponnet
