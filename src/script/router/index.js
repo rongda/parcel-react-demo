@@ -1,25 +1,18 @@
 import React from 'react'
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
 
-import App from '../component/App'
-import Age from '../component/Age'
-import Name from '../component/Name'
-import Hello from '../component/Hello'
-import Auth from '../component/Auth'
+import Login from '../container/login'
+import Register from '../container/register'
 
 class RouterConfig extends React.Component {
   render() {
     return (
       <BrowserRouter>
         <div>
-          <App />
           <Switch>
-            <Route path='/' exact component={Hello} />
-            <Route path='/age' component={Age} />
-            <Route path='/name' component={Name} />
-            <Route path='/auth' component={Auth} />
-            <Route path='/:location' component={Hello} />
-            <Redirect to='/' />
+            <Route path='/login' exact component={Login} />
+            <Route path='/register' exact component={Register} />
+            <Redirect to='/login' />
           </Switch>
         </div>
       </BrowserRouter>
