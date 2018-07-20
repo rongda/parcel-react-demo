@@ -33,6 +33,8 @@
   "dependencies": {
     "antd-mobile": "^2.2.2",
     "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "cookie-parser": "^1.4.3",
     "prop-types": "^15.6.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
