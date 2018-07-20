@@ -1,69 +1,53 @@
 import axios from 'axios'
 import {
-  ADD_AGE,
-  REDECE_AGE,
-  RENAME,
-  LOGIN,
-  LOGOUT,
-  REQUEST,
-  RECEIVE
+  ERROR_MSG,
+  REGISTER_SUCCESS
 } from './type'
 
 // action
-const showLoading = () => ({
-  type: REQUEST
-})
-const hideLoading = () => ({
-  type: RECEIVE
+
+const errorMsg = msg => ({
+  msg,
+  type: ERROR_MSG
 })
 
-const addAge = () => ({
-  type: ADD_AGE
-})
-const reduceAge = () => ({
-  type: REDECE_AGE
+const registerSuccess = data => ({
+  type: REGISTER_SUCCESS,
+  payload: data
 })
 
-const reName = name => ({
-  type: RENAME,
-  name
-})
-// async action
-const asyncReName = name => dispatch => (
-  async() => {
-    try {
-      dispatch(showLoading())
-      const res = await axios.get('https://easy-mock.com/mock/5b2b75349bd86a040ba4cb15/test/get_name')
-      const test = await axios.get('/api/test')
-      const user = await axios.get('/api/user')
-
-      dispatch(reName(res.data.name))
-
-      console.log(res.data.name)
-      console.log(test.data)
-      console.log(user.data)
-      dispatch(hideLoading())
-    } catch (error) {
-      console.log('error', error)
-      dispatch(hideLoading())
-    }
+const register = ({
+  user,
+  pwd,
+  repeatpwd,
+  type
+}) => {
+  if (!user || !pwd || !type) {
+    return errorMsg('用户名密码必须填写')
   }
-)()
-
-// token
-const login = () => ({
-  type: LOGIN
-})
-
-const logout = () => ({
-  type: LOGOUT
-})
+  if (pwd !== repeatpwd) {
+    return errorMsg('密码和确认密码不同')
+  }
+  return dispatch => {
+    axios.post('/user/register', {
+      user,
+      pwd,
+      type
+    }).then(res => {
+      if (res.status === 200 && res.data.code === 0) {
+        dispatch(registerSuccess({
+          user,
+          pwd,
+          type
+        }))
+      } else {
+        dispatch(errorMsg(res.data.msg))
+      }
+    })
+  }
+}
 
 export {
-  addAge,
-  reduceAge,
-  reName,
-  asyncReName,
-  login,
-  logout
+  errorMsg,
+  register
 }

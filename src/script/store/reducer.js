@@ -1,69 +1,37 @@
 import { combineReducers } from 'redux'
 import {
-  ADD_AGE,
-  REDECE_AGE,
-  RENAME,
-  LOGIN,
-  LOGOUT,
-  REQUEST,
-  RECEIVE
+  ERROR_MSG,
+  REGISTER_SUCCESS
 } from './type'
 
-const loading = (state = false, action) => {
-  switch (action.type) {
-    case REQUEST:
-      return true
-    case RECEIVE:
-      return false
-    default:
-      return state
-  }
-}
-
-const age = (state = 18, action) => {
-  switch (action.type) {
-    case ADD_AGE:
-      return state + 1
-    case REDECE_AGE:
-      return state - 1
-    default:
-      return state
-  }
-}
-const name = (state = 'Roda', action) => {
-  switch (action.type) {
-    case RENAME:
-      return action.name
-    default:
-      return state
-  }
-}
-
-const token = (state = {
+const initState = {
   isAuth: false,
-  user: 'Roda'
-}, action) => {
+  msg: '',
+  pwd: '',
+  type: ''
+}
+
+const user = (state = initState, action) => {
   switch (action.type) {
-    case LOGIN:
+    case ERROR_MSG:
       return {
         ...state,
-        isAuth: true
-      }
-    case LOGOUT:
-      return {
-        ...state,
+        msg: action.msg,
         isAuth: false
       }
+    case REGISTER_SUCCESS:
+      return {
+        ...state,
+        msg: '',
+        isAuth: true,
+        ...action.payload
+      }
     default:
       return state
   }
 }
-
 const reducer = combineReducers({
-  age,
-  name,
-  token,
-  loading
+  user
 })
 
 export default reducer
