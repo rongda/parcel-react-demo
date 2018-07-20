@@ -7,7 +7,7 @@ class Logo extends React.Component {
         textAlign: 'center',
         fontSize: '50px',
         padding: '50px 0',
-        color: 'red'
+        color: '#ccc'
       }}>LOGO</div>
     )
   }
