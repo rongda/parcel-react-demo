@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { Redirect } from 'react-router-dom'
 import {
   List,
   InputItem,
@@ -41,6 +42,7 @@ class Register extends React.Component {
     console.log(this.props)
     return (
       <div>
+        {this.props.redirectTo && <Redirect to={this.props.redirectTo} />}
         <Logo />
         {this.props.msg && <p style={{
           color: 'red',
