@@ -1,7 +1,8 @@
 import axios from 'axios'
 import {
   ERROR_MSG,
-  REGISTER_SUCCESS
+  REGISTER_SUCCESS,
+  LOGIN_SUCCESS
 } from './type'
 
 // action
@@ -13,6 +14,11 @@ const errorMsg = msg => ({
 
 const registerSuccess = data => ({
   type: REGISTER_SUCCESS,
+  payload: data
+})
+
+const loginSuccess = data => ({
+  type: LOGIN_SUCCESS,
   payload: data
 })
 
@@ -47,7 +53,29 @@ const register = ({
   }
 }
 
+const login = ({
+  user,
+  pwd
+}) => {
+  if (!user || !pwd) {
+    return errorMsg('用户名密码必须填写')
+  }
+  return dispatch => {
+    axios.post('/user/login', {
+      user,
+      pwd
+    }).then(res => {
+      if (res.status === 200 && res.data.code === 0) {
+        dispatch(loginSuccess(res.data.data))
+      } else {
+        dispatch(errorMsg(res.data.msg))
+      }
+    })
+  }
+}
+
 export {
   errorMsg,
-  register
+  register,
+  login
 }

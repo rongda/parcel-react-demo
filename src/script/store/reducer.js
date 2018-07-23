@@ -1,10 +1,13 @@
 import { combineReducers } from 'redux'
 import {
   ERROR_MSG,
-  REGISTER_SUCCESS
+  REGISTER_SUCCESS,
+  LOGIN_SUCCESS
 } from './type'
+import { getRedirectPath } from '../util'
 
 const initState = {
+  redirectTo: '',
   isAuth: false,
   msg: '',
   pwd: '',
@@ -17,12 +20,22 @@ const user = (state = initState, action) => {
       return {
         ...state,
         msg: action.msg,
-        isAuth: false
+        isAuth: false,
+        redirectTo: ''
       }
     case REGISTER_SUCCESS:
       return {
         ...state,
         msg: '',
+        redirectTo: getRedirectPath(action.payload),
+        isAuth: true,
+        ...action.payload
+      }
+    case LOGIN_SUCCESS:
+      return {
+        ...state,
+        msg: '',
+        redirectTo: getRedirectPath(action.payload),
         isAuth: true,
         ...action.payload
       }
