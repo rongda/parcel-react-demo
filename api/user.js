@@ -1,5 +1,6 @@
 /* eslint-disable */
 const express = require('express')
+const utils = require('./utils')
 const Router = express.Router()
 const model = require('./model')
 const User = model.getModel('user')
@@ -13,7 +14,13 @@ Router.get('/list', (req, res) => {
 
 Router.post('/login', (req, res) => {
   const {user, pwd} = req.body
-  User.findOne({user, pwd}, (err, doc) => {
+  User.findOne({
+    user,
+    pwd: utils.md5(pwd)
+  }, {
+    pwd: 0,
+    __v: 0
+  }, (err, doc) => {
     if (!doc) {
       return res.json({code: 1, msg: '用户名或者密码错误'})
     }
@@ -27,7 +34,11 @@ Router.post('/register', (req, res) => {
     if (doc) {
       return res.json({code: 1, msg: '用户名重复'})
     }
-    User.create({user, pwd, type}, (e, d) => {
+    User.create({
+      user,
+      type,
+      pwd: utils.md5(pwd)
+    }, (e, d) => {
       if(e) {
         return res.json({code: 1, msg: '后端出错了'})
       }
