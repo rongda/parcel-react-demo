@@ -2,11 +2,11 @@ import axios from 'axios'
 import {
   ERROR_MSG,
   REGISTER_SUCCESS,
-  LOGIN_SUCCESS
+  LOGIN_SUCCESS,
+  LOAD_DATA
 } from './type'
 
 // action
-
 const errorMsg = msg => ({
   msg,
   type: ERROR_MSG
@@ -20,6 +20,14 @@ const registerSuccess = data => ({
 const loginSuccess = data => ({
   type: LOGIN_SUCCESS,
   payload: data
+})
+
+const loadData = ({
+  user,
+  type
+}) => ({
+  type: LOAD_DATA,
+  payload: {user, type}
 })
 
 const register = ({
@@ -77,5 +85,6 @@ const login = ({
 export {
   errorMsg,
   register,
-  login
+  login,
+  loadData
 }
