@@ -35,15 +35,20 @@ Router.post('/register', (req, res) => {
     if (doc) {
       return res.json({code: 1, msg: '用户名重复'})
     }
-    User.create({
+    const userModel = new User({
       user,
       type,
       pwd: utils.md5(pwd)
-    }, (e, d) => {
-      if(e) {
+    })
+    userModel.save((err, doc) => {
+      if(err) {
         return res.json({code: 1, msg: '后端出错了'})
       }
-      return res.json({code: 0})
+      const {user, type, _id} = doc
+      res.cookie('userid', doc._id)
+      return res.json({code: 0, data: {
+        user, type, _id
+      }})
     })
   })
 })
