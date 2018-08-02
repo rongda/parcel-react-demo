@@ -8,7 +8,9 @@ class Logo extends React.Component {
         fontSize: '50px',
         padding: '50px 0',
         color: '#ccc'
-      }}>LOGO</div>
+      }}>
+        LOGO
+      </div>
     )
   }
 }
