@@ -1,0 +1,180 @@
+.my-detail {
+  // margin: 0 10px;
+  &.has-fixed {
+    margin-bottom: 94px;
+  }
+  .line{
+    margin: 0;
+    word-wrap: break-word;
+  }
+  .am-flexbox {
+    padding: 10px 0;
+    margin: 0 10px;
+    border-bottom: 1px solid #ECECED;
+    background-color: #fff;
+    > .am-flexbox-item {
+      &:last-child {
+        margin-left: 10px;
+      }
+    }
+  }
+  .my-file {
+    margin-bottom: 10px;
+    color: #fe5073;
+    font-weight: bold;
+  }
+  .my-schedule {
+    margin: 0 10px;
+    padding: 0;
+    background-color: #eaeaec;
+    border-radius: 0;
+    &::before {
+      border: none !important;
+      border-bottom: 1PX solid #ddd !important;
+      border-radius: 0 !important;
+    }
+    .am-card-body {
+      padding: 0;
+      .am-flexbox {
+        background-color: #eaeaec;
+        border-bottom: 1px dashed #ddd;
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+    }
+  }
+  .my-input {
+    height: auto;
+    min-height: auto;
+    padding-left: 0;
+  }
+  .my-progress {
+    margin: 0 10px;
+    background-color: #fff;
+    &::before {
+      border-radius: 0 !important;
+    }
+    .am-flexbox {
+      padding: 0;
+      margin-bottom: 5px;
+      margin-right: 0;
+      border-bottom: none;
+      > .am-flexbox-item {
+        &:last-child {
+          margin-left: 0;
+          flex-basis: 20%;
+          padding-left: 5px;
+          padding-right: 0;
+          text-align: right;
+        }
+        &:nth-child(2) {
+          // flex-basis: 13%;
+          padding-left: 0;
+          padding-right: 0;
+          margin-left: 5px;
+        }
+        &:first-child {
+          text-align: left;
+          padding-left: 5px;
+          padding-right: 0;
+        }
+      }
+    }
+    .my-progress-item {
+      position: relative;
+      margin-left: 0;
+      &.my-progress-item-through {
+        color: #333;
+        &::before, &::after {
+          color: #333;
+          border-color: #108ee9;
+          background-color: #108ee9;
+        }
+      }
+      &.my-progress-item-reject {
+        color: red;
+        &::before, &::after {
+          color: red;
+          border-color: red;
+          background-color: red;
+        }
+      }
+      .my-progress-item-one-through {
+        color: #333;
+      }
+      .my-progress-item-one-reject {
+        color: red;
+      }
+      .my-progress-item-one {
+        color: #ddd;
+      }
+      &::before {
+        content: '';
+        position: absolute;
+        top: 3px;
+        left: 0;
+        width: 8px;
+        height: 8px;
+        border-radius: 100%;
+        border: 1px solid #ddd;
+        background-color: #ddd;
+      }
+      &::after {
+        content: '';
+        position: absolute;
+        top: 13px;
+        left: 5px;
+        width: 1px;
+        height: 100%;
+        background-color: #ddd
+      }
+      &:last-child {
+        &::after {
+          content: '';
+          position: absolute;
+          top: 13px;
+          left: 5px;
+          width: 0;
+          height: 0;
+          background-color: #fff;
+        }
+        .my-progress-item-reason {
+          min-height: 0;
+        }
+      }
+      .my-progress-item-reason {
+        min-height: 17px;
+      }
+    }
+  }
+  .my-detail-main {
+    width: 100%;
+    position: absolute;
+    top: 8px;
+    bottom: 97px;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    &.my-detail-main-uninput {
+      bottom: 55px;
+    }
+  }
+  .my-belief {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    z-index: 1;
+    border: 1px solid #ECECED;
+    .my-belief-btn {
+      display: flex;
+      justify-content: center;
+      padding: 10px 0;
+      border-top: 1px solid #ECECED;
+      .am-button-small {
+        padding: 0 30px;
+      }
+    }
+  }
+}

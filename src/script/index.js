@@ -6,10 +6,14 @@ import thunk from 'redux-thunk'
 import reducer from './store/reducer'
 import RouterConfig from './router'
 
-const store = createStore(reducer, compose(
+const store = process.env.NODE_ENV !== 'development' ? createStore(
+  reducer,
+  compose(applyMiddleware(thunk))
+) : createStore(reducer, compose(
   applyMiddleware(thunk),
   window.devToolsExtension ? window.devToolsExtension() : () => {}
 ))
+
 ReactDOM.render(
   <Provider store={store}>
     <RouterConfig />

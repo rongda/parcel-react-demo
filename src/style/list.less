@@ -1,0 +1,70 @@
+/*
+ * @Author: Roda.Wang 
+ * @Date: 2018-08-20 10:30:51 
+ * @Last Modified by: Roda.Wang
+ * @Last Modified time: 2018-09-14 11:09:31
+ */
+/* list */
+
+.my-list {
+  margin-top: 8px;
+  .listWhiteSpace {
+    height: 8px;
+    background-color: #F5F5F9;
+    border-bottom: 1px solid #ECECED;
+    border-top: 1px solid #ECECED;
+  }
+  .am-flexbox {
+    padding: 5px 0;
+    -webkit-box-align: flex-start !important;
+    -webkit-align-items: flex-start !important;
+    -ms-flex-align: flex-start !important;
+    align-items: flex-start !important;
+    >.am-flexbox-item {
+      padding-left: 10px;
+      padding-right: 10px;
+      &.colon {
+        position: relative;
+        padding-right: 25px;
+        &::before {
+          content: '：';
+          position: absolute;
+          display: block;
+          z-index: 1;
+          top: 0;
+          right: auto;
+          bottom: auto;
+          left: 0;
+          width: 100%;
+        }
+      }
+      &:first-child {
+        text-align: right;
+      }
+      &:last-child {
+        flex-basis: 50%;
+      }
+    }
+  }
+  .my-list-footer {
+    padding: 10px;
+    text-align: center;
+  }
+  .my-badge {
+    &.my-badge-4, &.my-badge-6 { // 已通过
+      .am-badge-text {
+        background-color: #108ee9;
+      }
+    }
+    &.my-badge-5 { // 已拒绝
+      .am-badge-text {
+        background-color: red;
+      }
+    }
+    .am-badge-text {
+      margin-top: 6px;
+      margin-left: 28px;
+      background-color: green;
+    }
+  }
+}

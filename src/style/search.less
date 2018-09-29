@@ -1,0 +1,50 @@
+/*
+ * @Author: Roda.Wang 
+ * @Date: 2018-08-19 14:36:06 
+ * @Last Modified by: Roda.Wang
+ * @Last Modified time: 2018-09-04 13:36:13
+ */
+/* my-search */
+
+.my-search {
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+  background-color: #fff;
+  .am-flexbox-item {
+    margin-left: 0;
+    text-align: center;
+    border-right: 1px solid #ddd;
+    &:last-child {
+      border-right: none;
+    }
+  }
+}
+.my-search-wrap {
+  position: relative
+}
+
+.my-search-box {
+  position: absolute;
+  top: 44px;
+  left: 0;
+  padding: 0 8px;
+  background-color: #efeff4;
+  width: 100%;
+  z-index: 9999;
+  box-sizing: border-box;
+  border-bottom: 1px solid #ddd;
+  max-height: 170px;
+  overflow: auto;
+  .my-search-none{
+    padding: 13px 0;
+    text-align: center;
+  }
+  .am-flexbox {
+    padding: 13px 0;
+    border-bottom: 1px solid #ddd;
+    box-sizing: border-box;
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}

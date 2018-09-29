@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Full-Stack</title>
+  <meta charset="utf-8">
+  <title>OA审批</title>
+  <link rel="icon" href="./assets/favicon.ico">
   <!-- set `maximum-scale` for some compatibility issues -->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
-  <script src="https://as.alipayobjects.com/g/component/fastclick/1.0.6/fastclick.js"></script>
+  <script src="//oa-cdn.meiyou.com/fastclick.min.js"></script>
   <script>
     if ('addEventListener' in document) {
       document.addEventListener('DOMContentLoaded', function() {
@@ -12,10 +14,10 @@
       }, false);
     }
     if(!window.Promise) {
-      document.writeln('<script src="https://as.alipayobjects.com/g/component/es6-promise/3.2.2/es6-promise.min.js"'+'>'+'<'+'/'+'script>');
+      document.writeln('<script src="//oa-cdn.meiyou.com/es6-promise.min.js"'+'>'+'<'+'/'+'script>');
     }
   </script>
-  <link rel="stylesheet" href="./style/index.styl">
+  <link rel="stylesheet" href="./style/index.less">
 </head>
 <body>
 	<noscript>

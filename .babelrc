@@ -1,8 +1,5 @@
 {
-  "presets": [
-    "env",
-    "react"
-  ],
+  "presets": ["env", "react"],
   "plugins": [
     "transform-decorators-legacy",
     "transform-object-rest-spread",
@@ -16,7 +13,7 @@
     [
       "import", {
         "libraryName": "antd-mobile",
-        "style": "css"
+        "style": false
       }
     ]
   ]

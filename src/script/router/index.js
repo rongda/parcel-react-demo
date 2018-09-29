@@ -1,32 +1,34 @@
 import React from 'react'
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
+import { connect } from 'react-redux'
+import configItem from './config'
+import Auth from '../component/Auth'
+import { pathname } from '../config'
 
-import AuthRouter from '../component/AuthRouter'
-import Login from '../container/login'
-import Register from '../container/register'
-
-const GenuisInfo = () => {
-  return <div>GenuisInfo</div>
-}
-
-const BossInfo = () => {
-  return <div>BossInfo</div>
-}
-
+@connect(
+  state => state.authorization,
+  null
+)
 class RouterConfig extends React.Component {
   render() {
+    const { isAuth } = this.props
+    const isLoading = window.location.pathname === pathname
     return (
       <BrowserRouter>
-        <div>
-          <AuthRouter />
-          <Switch>
-            <Route path='/login' exact component={Login} />
-            <Route path='/register' component={Register} />
-            <Route path='/genuisinfo' component={GenuisInfo} />
-            <Route path='/bossinfo' component={BossInfo} />
-            <Redirect to='/login' />
-          </Switch>
-        </div>
+        <React.Fragment>
+          <Auth />
+          {isAuth && <Switch>
+            {configItem.map((item, index) => (
+              <Route
+                key={index}
+                path={item.path}
+                component={item.component}
+                exact
+              />
+            ))}
+            {!isLoading && <Redirect to='/todo' />}
+          </Switch>}
+        </React.Fragment>
       </BrowserRouter>
     )
   }

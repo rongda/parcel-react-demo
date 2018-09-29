@@ -1,0 +1,29 @@
+/*
+ * @Author: Roda.Wang 
+ * @Date: 2018-09-18 16:58:04 
+ * @Last Modified by: Roda.Wang
+ * @Last Modified time: 2018-09-21 08:06:41
+ */
+ @primary-color : #ff5073;
+.am-button-primary {
+  background-color: @primary-color;
+  border-color: @primary-color;
+  &::before {
+    border-color: @primary-color !important;
+  }
+  &.am-button-active {
+    background-color: @primary-color;
+    border-color: @primary-color !important;
+  }
+}
+
+.am-modal-button {
+  color: @primary-color !important;
+  &:first-child {
+    color: #000 !important;
+  }
+}
+
+.am-search-cancel {
+  color: @primary-color !important;
+}
