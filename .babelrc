@@ -1,8 +1,5 @@
 {
-  "presets": [
-    "env",
-    "react"
-  ],
+  "presets": ["env", "react"],
   "plugins": [
     "transform-decorators-legacy",
     "transform-object-rest-spread",
@@ -15,8 +12,9 @@
     ],
     [
       "import", {
-        "libraryName": "antd-mobile",
-        "style": "css"
+        "libraryName": "antd",
+        "libraryDirectory": "es",
+        "style": false // true(less) css false
       }
     ]
   ]

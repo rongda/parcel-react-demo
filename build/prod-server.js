@@ -1,6 +1,6 @@
 /* eslint-disable */
 const Bundler = require('parcel-bundler');
-const Api = require('../api');
+// const Api = require('../api');
 const Path = require('path');
 const express = require("express");
 const app = express();
@@ -27,8 +27,8 @@ process.env.NODE_ENV = config.env.prod;
 
 const bundler = new Bundler(file, options);
 app.use(express.static(config.outDir));
-// Api
-app.use('/', Api);
+// Api mock
+// app.use('/', Api);
 // use middleware
 app.use(bundler.middleware());
 // listen

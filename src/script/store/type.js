@@ -1,17 +1,1 @@
-const ADD_AGE = 'ADD_AGE'
-const REDECE_AGE = 'EDECE_AGE'
-const RENAME = 'RENAME'
-const LOGIN = 'LOGIN'
-const LOGOUT = 'LOGOUT'
-const REQUEST = 'REQUEST'
-const RECEIVE = 'RECEIVE'
-
-export {
-  ADD_AGE,
-  REDECE_AGE,
-  RENAME,
-  LOGIN,
-  LOGOUT,
-  REQUEST,
-  RECEIVE
-}
+export const GET_PROCESSES_DETAILS = 'GET_PROCESSES_DETAILS'
