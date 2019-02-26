@@ -12,6 +12,9 @@ import { login } from '../store/actions'
   })
 )
 class Auth extends React.Component {
+  async componentDidMount() {
+    console.log('test')
+  }
   render() {
     const { login, token } = this.props
     return (
